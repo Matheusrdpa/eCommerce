@@ -4,6 +4,8 @@ import com.estudo.eCommerce.dto.ProductDTO;
 import com.estudo.eCommerce.entities.Product;
 import com.estudo.eCommerce.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,8 +22,8 @@ public class ProductController {
     private ProductService service;
 
     @GetMapping
-    public ResponseEntity<List<ProductDTO>> getProducts() {
-        List<ProductDTO> productList = service.findAll();
+    public ResponseEntity<Page<ProductDTO>> getAllProducts(@RequestParam(name = "name", defaultValue = "") String name, Pageable pageable) {
+        Page<ProductDTO> productList = service.findAll(name,pageable);
         return ResponseEntity.ok(productList);
     }
 
