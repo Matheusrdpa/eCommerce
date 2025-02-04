@@ -1,19 +1,17 @@
 package com.estudo.eCommerce.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.Instant;
 
 @Entity
-@Table(name = "tb_payment")
+@Table(name = "payments")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode
 public class Payment {
 
     @Id

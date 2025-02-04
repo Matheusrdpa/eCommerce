@@ -2,20 +2,18 @@ package com.estudo.eCommerce.entities;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.Instant;
 
 
 @Entity
-@Table(name = "tb_order")
+@Table(name = "orders")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

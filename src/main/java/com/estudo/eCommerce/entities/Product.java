@@ -1,10 +1,7 @@
 package com.estudo.eCommerce.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,6 +12,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode
 public class Product {
 
     @Id
@@ -26,7 +24,7 @@ public class Product {
     private String imgUrl;
 
     @ManyToMany
-    @JoinTable(name = "products_category",
+    @JoinTable(name = "product_category",
             joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<Category> categories = new HashSet<>();
 }

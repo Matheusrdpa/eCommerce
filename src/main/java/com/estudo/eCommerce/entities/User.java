@@ -1,20 +1,18 @@
 package com.estudo.eCommerce.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "tb_user")
+@Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode
 public class User {
 
     @Id
