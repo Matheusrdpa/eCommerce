@@ -1,10 +1,16 @@
 package com.estudo.eCommerce.dto;
 
+import com.estudo.eCommerce.entities.Category;
 import com.estudo.eCommerce.entities.Product;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,11 +29,22 @@ public class ProductDTO {
     private Double price;
     private String imgUrl;
 
+    private List<CategoryDTO> categories = new ArrayList<>();
+
     public ProductDTO(Product product) {
         this.id = product.getId();
         this.name = product.getName();
         this.description = product.getDescription();
         this.price = product.getPrice();
         this.imgUrl = product.getImgUrl();
+    }
+
+    public ProductDTO(Product product, Set<Category> categories) {
+        this.id = product.getId();
+        this.name = product.getName();
+        this.description = product.getDescription();
+        this.price = product.getPrice();
+        this.imgUrl = product.getImgUrl();
+        categories.forEach(category -> this.categories.add(new CategoryDTO(category)));
     }
 }
