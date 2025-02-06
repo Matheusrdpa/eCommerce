@@ -1,0 +1,58 @@
+INSERT INTO categories (name) VALUES ('Eletronics');
+INSERT INTO categories (name) VALUES ('Books');
+INSERT INTO categories (name) VALUES ('Jewelry');
+
+INSERT INTO products (name,price,description,img_url) VALUES ('Mistborn', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Macbook', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Playstation', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Bike a', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Bike b', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Bike c', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Nocturne star ring silver', 380.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Nocturne star ring gold', 1470.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Aurora Skies ring', 4560.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Dreamer charm silver', 600.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Sweet nothing gold', 1000.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Sweet nothing gold choker', 870.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Dreamer charm gold', 2000.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Lovesickbow', 460.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Lovesickbow', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Lovesickbow', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Lovesickbow', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Lovesickbow', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Lovesickbow', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Lovesickbow', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Lovesickbow', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Lovesickbow', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Lovesickbow', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Lovesickbow', 100.0, 'Product description', 'http://Pinterest.com');
+INSERT INTO products (name,price,description,img_url) VALUES ('Lovesickbow', 100.0, 'Product description', 'http://Pinterest.com');
+
+
+
+INSERT INTO product_category (product_id, category_id) VALUES (1, 2);
+INSERT INTO product_category (product_id, category_id) VALUES (2, 1);
+INSERT INTO product_category (product_id, category_id) VALUES (2, 1);
+INSERT INTO product_category (product_id, category_id) VALUES (3, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (4, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (5, 2);
+INSERT INTO product_category (product_id, category_id) VALUES (6, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (7, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (8, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (9, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (10, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (11, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (12, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (13, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (14, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (15, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (16, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (17, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (18, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (19, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (20, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (21, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (22, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (23, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (24, 3);
+INSERT INTO product_category (product_id, category_id) VALUES (25, 3);
