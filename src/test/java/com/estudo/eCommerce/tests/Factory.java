@@ -20,4 +20,9 @@ public class Factory {
         product.setName(name);
         return product;
     }
+
+    public static ProductDTO createProductDTO() {
+        Product product = createProduct();
+        return new ProductDTO(product,product.getCategories());
+    }
 }
