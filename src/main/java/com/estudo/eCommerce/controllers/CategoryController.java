@@ -30,7 +30,7 @@ public class CategoryController {
         return ResponseEntity.ok().body(result);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}")
     @Operation(description = "Returns a category searching by category ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Category was sucessfully found"),
@@ -54,7 +54,7 @@ public class CategoryController {
         return ResponseEntity.ok().body(categoryDTO);
     }
 
-    @PutMapping
+    @PutMapping(value = "/{id}")
     @Operation(description = "Updates an already existing category searching by ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Category was successfully updated"),
@@ -62,12 +62,12 @@ public class CategoryController {
             @ApiResponse(responseCode = "422", description = "Invalid category fields"),
             @ApiResponse(responseCode = "500", description = "Internal error")
     })
-    public ResponseEntity<CategoryDTO> updateProduct(@PathVariable Long id, @Valid @RequestBody CategoryDTO categoryDTO) {
+    public ResponseEntity<CategoryDTO> updateCategory(@PathVariable Long id, @Valid @RequestBody CategoryDTO categoryDTO) {
         service.updateCategory(id, categoryDTO);
         return ResponseEntity.ok(categoryDTO);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}")
     @Operation(description = "Searches a category by id and deletes it")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Category was sucessfully found and removed"),
@@ -75,7 +75,7 @@ public class CategoryController {
             @ApiResponse(responseCode = "404", description = "Category matching specific id was not found"),
             @ApiResponse(responseCode = "500", description = "Internal error")
     })
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteCategory(@PathVariable Long id) {
         service.deleteCategory(id);
         return ResponseEntity.noContent().build();
     }

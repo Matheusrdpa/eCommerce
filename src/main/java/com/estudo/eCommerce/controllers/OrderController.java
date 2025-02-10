@@ -44,7 +44,7 @@ public class OrderController {
         return ResponseEntity.ok().body(orderDTO);
     }
 
-    @PostMapping("/{id}")
+    @PostMapping(value = "/{id}")
     @Operation(description = "Creates a new order using an already existing user ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Product successfully created"),
@@ -58,7 +58,7 @@ public class OrderController {
         return ResponseEntity.created(uri).body(orderDTO);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}")
     @Operation(description = "Searches an order by id and deletes it")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Order was sucessfully found and removed"),

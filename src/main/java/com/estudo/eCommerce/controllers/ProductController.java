@@ -63,7 +63,7 @@ public class ProductController {
 
 
 
-    @PutMapping("/{id}")
+    @PutMapping(value = "/{id}")
     @Operation(description = "Updates an already existing product searching by ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Product was successfully updated"),
@@ -76,7 +76,7 @@ public class ProductController {
         return ResponseEntity.ok(productDTO);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}")
     @Operation(description = "Searches a product by id and deletes it")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Product was sucessfully found and removed"),
