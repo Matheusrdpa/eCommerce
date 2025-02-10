@@ -1,4 +1,4 @@
-package com.estudo.eCommerce.controllers;
+package com.estudo.eCommerce.controllers.Exception;
 
 import com.estudo.eCommerce.dto.ErrorDTO;
 import com.estudo.eCommerce.dto.ValidationError;

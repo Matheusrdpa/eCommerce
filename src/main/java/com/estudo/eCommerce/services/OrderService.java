@@ -1,5 +1,6 @@
 package com.estudo.eCommerce.services;
 
+import com.estudo.eCommerce.dto.CategoryDTO;
 import com.estudo.eCommerce.dto.OrderDTO;
 import com.estudo.eCommerce.dto.OrderItemDTO;
 import com.estudo.eCommerce.dto.UserDTO;
@@ -8,14 +9,20 @@ import com.estudo.eCommerce.repositories.OrderItemRepository;
 import com.estudo.eCommerce.repositories.OrderRepository;
 import com.estudo.eCommerce.repositories.ProductRepository;
 import com.estudo.eCommerce.repositories.UserRepository;
+import com.estudo.eCommerce.services.Exceptions.DbException;
 import com.estudo.eCommerce.services.Exceptions.ResourceNotFoundException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class OrderService {
@@ -31,6 +38,12 @@ public class OrderService {
 
     @Autowired
     private OrderItemRepository orderItemRepository;
+
+    @Transactional(readOnly = true)
+    public List<OrderDTO> findAll() {
+        List<OrderDTO> orders = orderRepository.findAll().stream().map(x -> new OrderDTO(x)).toList();
+        return orders;
+    }
 
     @Transactional(readOnly = true)
     public OrderDTO findById(Long id){
@@ -57,5 +70,13 @@ public class OrderService {
         orderItemRepository.saveAll(order.getOrderItems());
 
         return new OrderDTO(order);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public void deleteOrder(Long id) {
+        if (!orderRepository.existsById(id)) {
+            throw new ResourceNotFoundException("Order not found");
+        }
+        orderRepository.deleteById(id);
     }
 }

@@ -1,6 +1,7 @@
 package com.estudo.eCommerce.entities;
 
 
+import com.estudo.eCommerce.dto.OrderItemDTO;
 import jakarta.persistence.*;
 import lombok.*;
 

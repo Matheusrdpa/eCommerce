@@ -37,6 +37,9 @@ public class ProductDTO {
         this.description = product.getDescription();
         this.price = product.getPrice();
         this.imgUrl = product.getImgUrl();
+        for (Category cat : product.getCategories()){
+            categories.add(new CategoryDTO(cat));
+        }
     }
 
     public ProductDTO(Product product, Set<Category> categories) {

@@ -4,6 +4,7 @@ import com.estudo.eCommerce.entities.Order;
 import com.estudo.eCommerce.entities.OrderItem;
 import com.estudo.eCommerce.entities.OrderStatus;
 import com.estudo.eCommerce.entities.Payment;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 
 import java.time.Instant;
@@ -21,6 +22,7 @@ public class OrderDTO {
     private OrderStatus status;
     private PaymentDTO payment;
     private UserDTO user;
+    @NotEmpty(message = "Needs to have at least one item")
     private List<OrderItemDTO> items = new ArrayList<>();
 
     public OrderDTO(Order order) {
