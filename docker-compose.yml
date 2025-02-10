@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: dev-postgresql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ng1505
+      POSTGRES_DB: ecommerce
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./.data/postgresql/data:/var/lib/postgresql/data
+
+
+  app:
+    build: .
+    container_name: ecommerce
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/ecommerce
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: ng1505
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
