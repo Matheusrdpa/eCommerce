@@ -5,7 +5,7 @@ import com.estudo.eCommerce.entities.Product;
 import com.estudo.eCommerce.services.Exceptions.DbException;
 import com.estudo.eCommerce.services.Exceptions.ResourceNotFoundException;
 import com.estudo.eCommerce.services.ProductService;
-import com.estudo.eCommerce.tests.Factory;
+import com.estudo.eCommerce.tests.ProductFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -55,7 +55,7 @@ public class ProductControllerTests {
         nonExistingd = 2L;
         dependantId = 3L;
 
-        productDTO = Factory.createProductDTO();
+        productDTO = ProductFactory.createProductDTO();
         page = new PageImpl<>(List.of(productDTO));
 
         Mockito.when(productService.findAll(eq(productName), any())).thenReturn(page);

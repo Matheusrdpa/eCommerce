@@ -1,7 +1,7 @@
 package com.estudo.eCommerce.repositories;
 
 import com.estudo.eCommerce.entities.Product;
-import com.estudo.eCommerce.tests.Factory;
+import com.estudo.eCommerce.tests.ProductFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,7 +27,7 @@ public class ProductRepositoryTests {
 
     @Test
     public void saveShouldPersistWithAutoIncrementWhenIdIsNull() {
-        Product product = Factory.createProduct();
+        Product product = ProductFactory.createProduct();
         product.setId(null);
 
         product = productRepository.save(product);

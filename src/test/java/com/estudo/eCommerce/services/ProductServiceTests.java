@@ -5,7 +5,7 @@ import com.estudo.eCommerce.entities.Product;
 import com.estudo.eCommerce.repositories.ProductRepository;
 import com.estudo.eCommerce.services.Exceptions.DbException;
 import com.estudo.eCommerce.services.Exceptions.ResourceNotFoundException;
-import com.estudo.eCommerce.tests.Factory;
+import com.estudo.eCommerce.tests.ProductFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -48,7 +48,7 @@ public class ProductServiceTests {
         nonExistingd = 1000L;
         dependantId = 3L;
         productName = "Phone";
-        product = Factory.createProduct(productName);
+        product = ProductFactory.createProduct(productName);
         productDTO = new ProductDTO(product);
         page = new PageImpl<>(List.of(product));
 
@@ -140,7 +140,6 @@ public class ProductServiceTests {
 
     @Test
     public void deleteProductsShouldThrowResourceNotFoundExceptionWhenIdDoesNotExist() {
-
         Assertions.assertThrows(ResourceNotFoundException.class, () -> {
             productService.deleteProduct(nonExistingd);
         });

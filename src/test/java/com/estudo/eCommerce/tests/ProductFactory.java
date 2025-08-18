@@ -4,9 +4,7 @@ import com.estudo.eCommerce.dto.ProductDTO;
 import com.estudo.eCommerce.entities.Category;
 import com.estudo.eCommerce.entities.Product;
 
-import java.time.Instant;
-
-public class Factory {
+public class ProductFactory {
 
     public static Product createProduct() {
         Category category = new Category(1L, "books");

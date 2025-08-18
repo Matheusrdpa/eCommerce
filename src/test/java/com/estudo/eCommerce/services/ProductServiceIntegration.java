@@ -39,7 +39,7 @@ public class ProductServiceIntegration {
     }
 
     @Test
-    public void findAllPagedeShouldReturnPageWhenPage0Size10(){
+    public void findAllPagedShouldReturnPageWhenPage0Size10(){
         PageRequest pageRequest = PageRequest.of(0, 10);
         Page<ProductDTO> res = productService.findAll(emptyName,pageRequest);
 

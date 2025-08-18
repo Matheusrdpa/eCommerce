@@ -1,7 +1,7 @@
 package com.estudo.eCommerce.controllers;
 
 import com.estudo.eCommerce.dto.ProductDTO;
-import com.estudo.eCommerce.tests.Factory;
+import com.estudo.eCommerce.tests.ProductFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,7 +36,7 @@ public class ProductControllerIntegration {
 
     @BeforeEach
     void setUp() throws Exception {
-        productDTO = Factory.createProductDTO();
+        productDTO = ProductFactory.createProductDTO();
         existingId = 1L;
         nonExistingId = 1000L;
         quantity = 25L;
