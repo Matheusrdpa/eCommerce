@@ -5,6 +5,8 @@ import com.estudo.eCommerce.entities.*;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 public class OrderFactory {
     public static Order createOrder() {
@@ -21,6 +23,14 @@ public class OrderFactory {
 
     public static OrderDTO createOrderDTO() {
         Order order = new Order();
+        Set<OrderItem> items = new HashSet<>();
+
+        Product product = createProduct();
+
+        OrderItem item = new OrderItem();
+        item.setProduct(product);
+        items.add(item);
+
         order.setId(1L);
         order.setMoment(Instant.now());
         order.setStatus(OrderStatus.PAID);
@@ -28,6 +38,11 @@ public class OrderFactory {
         order.setClient(user);
         Payment payment = new Payment(1L,Instant.now(), PaymentMethod.CASH,order);
         order.setPayment(payment);
+        order.setOrderItems(items);
         return new OrderDTO(order);
+    }
+
+    public static Product createProduct() {
+       return new Product(1L, "product", "description", 20.00, "img");
     }
 }
