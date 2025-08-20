@@ -98,7 +98,7 @@ public class UserServiceIntegrationTest {
     }
 
     @Test
-    void deleteShouldDeleteUser() {
+    void deleteShouldDeleteUserWhenIdExists() {
         userService.deleteUser(existingId);
         Assertions.assertEquals(4, userRepository.count());
         Assertions.assertFalse(userRepository.existsById(existingId));
