@@ -76,7 +76,10 @@ public class OrderService {
     public void deleteOrder(Long id) {
         if (!orderRepository.existsById(id)) {
             throw new ResourceNotFoundException("Order not found");
+        }try{
+            orderRepository.deleteById(id);
+        }catch (DataIntegrityViolationException e){
+            throw new DbException("Order depends on another entity");
         }
-        orderRepository.deleteById(id);
     }
 }
