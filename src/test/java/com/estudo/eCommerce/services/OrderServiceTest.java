@@ -75,6 +75,7 @@ public class OrderServiceTest {
         User user = new User(1L,"John","John@test.com","123456", LocalDate.now());
 
         when(userRepository.getReferenceById(existingId)).thenReturn(user);
+        when(userRepository.existsById(existingId)).thenReturn(true);
 
         when(orderRepository.save(any(Order.class))).thenAnswer(invocation -> {
             Order order = invocation.getArgument(0);

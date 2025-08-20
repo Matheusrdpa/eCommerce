@@ -53,6 +53,10 @@ public class OrderService {
 
     @Transactional
     public OrderDTO insert(OrderDTO orderDTO, Long userId){
+        if (!userRepository.existsById(userId)){
+            throw new ResourceNotFoundException("User not found for this id");
+        }
+
         Order order = new Order();
 
         order.setMoment(Instant.now());

@@ -2,10 +2,9 @@ package com.estudo.eCommerce.controllers;
 
 import com.estudo.eCommerce.dto.UserDTO;
 import com.estudo.eCommerce.repositories.UserRepository;
-import com.estudo.eCommerce.services.Exceptions.ResourceNotFoundException;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -29,8 +28,6 @@ public class UserControllerIntegration {
 
     @Autowired
     private MockMvc mockMvc;
-    @Autowired
-    private UserRepository userRepository;
     @Autowired
     private ObjectMapper objectMapper;
 
