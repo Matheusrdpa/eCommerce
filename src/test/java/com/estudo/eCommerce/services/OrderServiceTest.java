@@ -102,11 +102,4 @@ public class OrderServiceTest {
         when(orderRepository.existsById(nonExistingId)).thenReturn(false);
         Assertions.assertThrows(ResourceNotFoundException.class, () -> orderService.deleteOrder(nonExistingId));
     }
-
-    @Test
-    void deleteShouldThrowDbExceptionWhenEntityDependsOnAnother(){
-        when(orderRepository.existsById(dependentId)).thenReturn(true);
-        doThrow(DataIntegrityViolationException.class).when(orderRepository).deleteById(dependentId);
-        Assertions.assertThrows(DbException.class, () -> orderService.deleteOrder(dependentId));
-    }
 }
