@@ -9,7 +9,9 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -51,7 +53,8 @@ public class CategoryController {
     })
     public ResponseEntity<CategoryDTO> insert(@RequestBody CategoryDTO categoryDTO) {
         categoryDTO = service.createCategory(categoryDTO);
-        return ResponseEntity.ok().body(categoryDTO);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").build(categoryDTO.getId());
+        return ResponseEntity.created(uri).body(categoryDTO);
     }
 
     @PutMapping(value = "/{id}")
