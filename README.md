@@ -101,6 +101,8 @@ Integração: utilizam o banco H2 em memória, simulando o ambiente real.
 
 O projeto usa JUnit 5 + Mockito + H2.
 
+Para rodar os testes, use:
+
 	> mvn test
     
 ## Endpoints Principais
